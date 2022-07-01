@@ -29,7 +29,15 @@ def get_random_answer():
    return rand
 
 
+def get_last_answer(question, user, answer_id):
+    answer = History.objects.filter(question=question, user=user).order_by('-created_date').first()
+    if answer and answer.id == answer_id:
+        return get_last_answer(question, user, get_random_answer().id)
+    return answer
+
+
 def get_answer(user, question):
+    answer = get_random_answer()
     history = History(
         user=user,
         answer=get_random_answer(),
