@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from .services import *
+from questions.services import get_question_count, get_random_answer, get_last_answer, get_answer
 
 from questions.serializers import (
     LoginSerializer,
