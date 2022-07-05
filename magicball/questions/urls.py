@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import *
+from questions.views import AnswerView, LoginView, RegisterView
 
 
 urlpatterns = [
