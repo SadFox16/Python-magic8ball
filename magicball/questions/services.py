@@ -1,6 +1,6 @@
 import random
 
-from .models import *
+from questions.models import History, Answers
 
 
 def get_question_count(question):
